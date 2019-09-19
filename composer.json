@@ -1,0 +1,13 @@
+{
+    "name": "jamal/my_helpers",
+    "description": "List of helpful helpers",
+    "type": "Library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamal",
+            "email": "arunajamal@yahoo.com"
+        }
+    ],
+    "require": {}
+}
