@@ -1,7 +1,6 @@
-<?php 
+<?php
 
 namespace Helpful\MyHelpers;
-
 
 /**
  *  A class used as my personal collection of custom helpers
@@ -23,19 +22,24 @@ class MyHelpers
      *
      * @return json
      */
-    function printJson($data = [], $status='success', $code = 201, $message='', array $headers = [], $encodingOptions = 0)
-    {
+    public function printJson(
+        $data = [],
+        $status = 'success',
+        $code = 201,
+        $message = '',
+        array $headers = [],
+        $encodingOptions = 0
+    ) {
         if (!in_array($status, ['fail', "success", "error"])) {
             throw new \Exception(
                 'Invalide status value'
             );
-
         }
         $data = ['data'  => $data ];
         $data += ['status' => $status, 'code'=> $code, 'message' => $message ];
 
         header('Content-Type: application/json');
-        http_response_code($code); //for php >= 5.4 
+        http_response_code($code); //for php >= 5.4
 
         $jsonData  = json_encode($data, $encodingOptions);
 
@@ -50,7 +54,5 @@ class MyHelpers
         }
 
         return $jsonData;
-
     }
-
 }
