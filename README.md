@@ -4,5 +4,9 @@
 
 - Thanks
 
+## Installation
+
+- composer require jaymal/my_helpers
+
 
 
